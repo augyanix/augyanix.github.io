@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#FCFCFA">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<title>SKILL.md Template · Augyanix</title>
+<meta name="description" content="Save the instructions for a task you repeat, as a reusable AI skill.">
+<link rel="canonical" href="https://augyanix.in/resources/skill-md-template/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://augyanix.in/resources/skill-md-template/">
+<meta property="og:title" content="SKILL.md Template · Augyanix">
+<meta property="og:description" content="Save the instructions for a task you repeat, as a reusable AI skill.">
+<meta property="og:image" content="https://augyanix.in/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="/"><span class="px" aria-hidden="true"><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i class="o"></i><i class="y"></i></span>AUGYANIX</a>
+    <div class="links mono">
+      <a href="/#work">Work</a>
+      <a href="/#path">Path</a>
+      <a href="/#teach">Teach</a>
+      <a href="/resources/" aria-current="page">Resources</a>
+    </div>
+  </nav>
+
+  <main id="main">
+  <header class="page-head">
+    <p class="mono kicker"><a href="/resources/">← All resources</a> · Prompting</p>
+    <h1>SKILL.md Template</h1>
+    <p class="intro">Save the instructions for a task you repeat, as a reusable AI skill.</p>
+  </header>
+
+  <article class="prose">
+<h2>AI Skill Template</h2>
+<p>Use this template to save instructions for a task you repeat often.</p>
+<hr>
+<h2>Part 1: Fill In Your Skill</h2>
+<h3>Skill Title</h3>
+<p>Give your skill a clear name.</p>
+<p><strong>Example:</strong> Email Reply, Bug Fix Update, Reel Script.</p>
+<h3>Purpose</h3>
+<p>Explain what the skill should do and what you will provide each time.</p>
+<p><strong>Example:</strong> “Write a customer email reply from the message and order details I provide.”</p>
+<h3>Tone</h3>
+<p>Describe how the output should sound.</p>
+<p><strong>Example:</strong> Friendly, simple English. Short sentences. No jargon.</p>
+<h3>Format</h3>
+<p>List the sections in the order you want them.</p>
+<p class="b"><strong>Example:</strong></p>
+<ol>
+<li>Subject line</li>
+<li>Three short lines</li>
+<li>Sign-off</li>
+</ol>
+<h3>Required Information</h3>
+<p>List the details that must always appear.</p>
+<p class="b"><strong>Example:</strong></p>
+<ul>
+<li>Customer name</li>
+<li>What changed</li>
+<li>New date</li>
+<li>Next step</li>
+</ul>
+<p>If essential information is missing, ask me one question before writing.</p>
+<h3>Output Limits</h3>
+<p>Set the length and presentation rules.</p>
+<p class="b"><strong>Example:</strong></p>
+<ul>
+<li>Under 100 words</li>
+<li>Plain text only</li>
+<li>No extra explanation before or after the draft</li>
+</ul>
+<h3>Reference Examples</h3>
+<p>Paste real outputs you like. Use examples that show your preferred tone and format.</p>
+<p class="b"><strong>Example 1:</strong></p>
+<p>[Paste an output here.]</p>
+<p class="b"><strong>Example 2:</strong></p>
+<p>[Paste another output here.]</p>
+<p class="b"><strong>Example 3:</strong></p>
+<p>[Paste a third output here.]</p>
+<h3>Rules</h3>
+<ul>
+<li>Never invent facts, names, or dates.</li>
+<li>Preserve the facts I provide.</li>
+<li>If the input is unclear, ask one focused question.</li>
+</ul>
+<hr>
+<h2>Part 2: Set Up and Improve</h2>
+<h3>1. Name Your Folder</h3>
+<p>Rename <code>skill-template</code> to your skill name.</p>
+<p>Use lowercase letters, numbers, and hyphens.</p>
+<p><strong>Example:</strong> <code>email-reply</code></p>
+<h3>2. Complete Your File</h3>
+<p>Open <code>SKILL.md</code>.</p>
+<p>Set its <code>name:</code> field to match the folder name, then fill in the sections above.</p>
+<h3>3. Add It to Claude</h3>
+<p><strong>Claude app:</strong> Zip the skill folder and upload it through the skill settings.</p>
+<p><strong>Claude Code:</strong> Place the folder in <code>~/.claude/skills/</code>, then invoke it with <code>/your-skill-name</code>.</p>
+<h3>4. Improve It Over Time</h3>
+<p>When an output needs a correction, update the relevant instructions in <code>SKILL.md</code>.</p>
+<p>Adjust the tone, format, rules, or examples. Upload the updated version if you use the Claude app.</p>
+<h3>File Checklist</h3>
+<ul>
+<li>File name: <code>SKILL.md</code>, with capital letters.</li>
+<li>Skill name: maximum 64 characters.</li>
+<li>Use lowercase letters, numbers, and hyphens.</li>
+<li>Do not include “claude” or “anthropic” in the skill name.</li>
+</ul>
+<hr>
+<h2>Part 3: Filled Example — Reel Script</h2>
+<h3>Purpose</h3>
+<p>Write a spoken reel script from the topic I provide.</p>
+<p><strong>Example input:</strong> “Claude skills in 3 steps.”</p>
+<h3>Tone</h3>
+<ul>
+<li>Use natural Teluglish: Telugu sentences with common English tech words.</li>
+<li>Sound like a friend explaining something.</li>
+<li>Keep sentences short and easy to say aloud.</li>
+<li>Start directly, without filler greetings.</li>
+</ul>
+<h3>Script Structure</h3>
+<div class="tablewrap"><table><thead><tr><th>Section</th><th>What to write</th></tr></thead><tbody>
+<tr><td><strong>Hook</strong></td><td>One relatable question or bold claim. Under 15 words, delivered in the first 3 seconds.</td></tr>
+<tr><td><strong>Open loop</strong></td><td>Promise one specific thing the viewer will learn, by second 5.</td></tr>
+<tr><td><strong>Body</strong></td><td>Three steps or points. One idea per line. Keep the explanation moving.</td></tr>
+<tr><td><strong>Payoff</strong></td><td>One memorable line that delivers on the opening promise.</td></tr>
+<tr><td><strong>CTA</strong></td><td>One action only: comment, follow, or save.</td></tr>
+</tbody></table></div>
+<h3>Required Information</h3>
+<p>Always include:</p>
+<ul>
+<li>The topic</li>
+<li>A clear connection to the intended audience</li>
+<li>One concrete example</li>
+<li>One number or a numbered step list</li>
+</ul>
+<p>If the topic is too vague, ask one focused question first.</p>
+<p>Never invent statistics. Mark any claim that needs checking with <code>[verify]</code>.</p>
+<h3>Deliverables</h3>
+<p>Return these in order:</p>
+<ol>
+<li><strong>Script:</strong> Under 150 words.</li>
+<li><strong>Beat sheet:</strong> A table with the spoken line, on-screen text, and suggested visual. Keep on-screen text to four words or fewer.</li>
+<li><strong>Alternate hooks:</strong> Three options, ranked strongest to weakest, with a one-line reason for each.</li>
+</ol>
+<h3>Reference Examples</h3>
+<h4>Example 1: Save Time With AI</h4>
+<p class="b"><strong>Hook</strong></p>
+<p>AI unna kuda, ade instructions malli malli type chestunnara?</p>
+<p class="b"><strong>Open loop</strong></p>
+<p>Ee moodu steps tho aa repetitive pani tagginchukovachu.</p>
+<p class="b"><strong>Body</strong></p>
+<p>Step 1: Meeru repeat chese instructions raayandi.</p>
+<p>Step 2: Vaatini reusable skill ga save cheyyandi.</p>
+<p>Step 3: Next task ki relevant details ichi, output review cheyyandi.</p>
+<p class="b"><strong>Payoff</strong></p>
+<p>Okasari set cheyyandi. Use chesthu improve cheyyandi.</p>
+<p class="b"><strong>CTA</strong></p>
+<p>Sample file kavalante, comment lo “skill” ani type cheyyandi.</p>
+<h4>Example 2: Better Prompts</h4>
+<p class="b"><strong>Hook</strong></p>
+<p>AI answer nachatleda? Mee prompt lo ee moodu unnaya?</p>
+<p class="b"><strong>Open loop</strong></p>
+<p>Oka simple example tho cheptha.</p>
+<p class="b"><strong>Body</strong></p>
+<p>Role: “Nuvvu technical editor.”</p>
+<p>Goal: “Ee bug fix ni explain cheyyi.”</p>
+<p>Format: “Root cause, fix, testing — moodu sections lo ivvu.”</p>
+<p class="b"><strong>Payoff</strong></p>
+<p>Role, goal, format. Mee expectation clear ga cheppandi.</p>
+<p class="b"><strong>CTA</strong></p>
+<p>Save chesukondi. Next prompt ki use cheyyandi.</p>
+<h4>Example 3: Free AI Tools</h4>
+<p class="b"><strong>Hook</strong></p>
+<p>Mee daily work kosam ee moodu free AI tools try chesara?</p>
+<p class="b"><strong>Open loop</strong></p>
+<p>Prati tool ki oka practical use chupistha.</p>
+<p class="b"><strong>Body</strong></p>
+<p>Tool 1: [Verified tool name] — [specific task].</p>
+<p>Tool 2: [Verified tool name] — [specific task].</p>
+<p>Tool 3: [Verified tool name] — [specific task].</p>
+<p class="b"><strong>Payoff</strong></p>
+<p>Mee pani ki use ayye tool tho start cheyyandi.</p>
+<p class="b"><strong>CTA</strong></p>
+<p>Ee list save chesukondi.</p>
+<p><em>Replace the placeholders and verify free-plan availability before using this example.</em></p>
+<h3>Rules</h3>
+<ul>
+<li>No emojis or hashtags in the script.</li>
+<li>Spell English terms normally: AI, prompt, tool.</li>
+<li>Preserve the facts I provide.</li>
+<li>Avoid exaggerated promises and unsupported claims.</li>
+<li>Make the script comfortable to speak aloud.</li>
+<li>Use only one CTA.</li>
+<li>If essential information is unclear, ask before writing.</li>
+</ul>
+  </article>
+
+  <p class="back"><a class="more-link mono" href="/resources/">← All resources</a></p>
+  </main>
+
+  <footer>
+    <p class="mono mute">Say hello</p>
+    <p class="mail">augyanix@gmail.com</p>
+    <div class="foot mono">
+      <span>© 2026 Augyanix</span>
+      <a href="https://github.com/augyanix" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

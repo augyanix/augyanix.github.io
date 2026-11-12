@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#FCFCFA">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<title>RCTRE Prompt Templates · Augyanix</title>
+<meta name="description" content="Role, Context, Task, Rules, Example: copy-ready prompt templates.">
+<link rel="canonical" href="https://augyanix.in/resources/rctre-prompt-templates/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://augyanix.in/resources/rctre-prompt-templates/">
+<meta property="og:title" content="RCTRE Prompt Templates · Augyanix">
+<meta property="og:description" content="Role, Context, Task, Rules, Example: copy-ready prompt templates.">
+<meta property="og:image" content="https://augyanix.in/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="/"><span class="px" aria-hidden="true"><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i class="o"></i><i class="y"></i></span>AUGYANIX</a>
+    <div class="links mono">
+      <a href="/#work">Work</a>
+      <a href="/#path">Path</a>
+      <a href="/#teach">Teach</a>
+      <a href="/resources/" aria-current="page">Resources</a>
+    </div>
+  </nav>
+
+  <main id="main">
+  <header class="page-head">
+    <p class="mono kicker"><a href="/resources/">← All resources</a> · Prompting</p>
+    <h1>RCTRE Prompt Templates</h1>
+    <p class="intro">Role, Context, Task, Rules, Example: copy-ready prompt templates.</p>
+  </header>
+
+  <article class="prose">
+<div class="codeblock"><button class="copy mono" type="button">Copy</button><pre><code>RCTRE PROMPT TEMPLATES — by @augyanix
+=====================================
+
+R = Role      → Evaru answer cheyyali? (who should answer)
+C = Context   → Mee situation enti? (background the AI can&#x27;t guess)
+T = Task      → Exactly em kavali? (one clear job)
+R = Rules     → Ela kavali? (format, length, limits, do / don&#x27;t)
+E = Example   → Ila kavali (a sample, reference or similar case)
+
+Note: Idi just a checklist for better results — MANDATORY kaadu.
+Simple questions ki 2–3 parts chaalu. Pedda tasks ki all 5 vaadandi.
+
+
+-------------------------------------
+1) BLANK TEMPLATE (copy &amp; fill)
+-------------------------------------
+Role: You are a [expert / role].
+Context: [Who I am, what I&#x27;m working on, important background, constraints.]
+Task: [The one specific thing I want you to do.]
+Rules:
+- [Output format, e.g. bullet points / table / code only]
+- [Length, e.g. under 150 words]
+- [Tone / language, e.g. simple English, Teluglish]
+- [What NOT to do]
+Example: [Paste a sample of what good looks like, or a similar case.]
+
+
+-------------------------------------
+2) CODING — BUG FIX (from the reel)
+-------------------------------------
+Role: You are a senior backend engineer.
+Context: This is a Spring Boot project running in production. Java [version], Spring Boot [version].
+Task: Fix this NullPointerException.
+[Paste the stack trace and the relevant method here]
+Rules:
+- Show only the changed lines, with a one-line reason for each change.
+- Don&#x27;t change method signatures or add new libraries.
+- If something is unclear, ask me before assuming.
+Example: Here is a similar function from my project that follows our coding style:
+[Paste the similar function here]
+
+
+-------------------------------------
+3) EMAIL / MESSAGE WRITING
+-------------------------------------
+Role: You are a professional communication coach.
+Context: I need to email my manager. [Situation, e.g. I need 2 days leave next week for a family function. The sprint ends Friday.]
+Task: Write the email.
+Rules:
+- Polite but direct, under 120 words.
+- Include a short plan for covering my work.
+- Give a subject line.
+Example: Keep the tone like this: &quot;Hi Ravi, quick request — ...&quot;
+
+
+-------------------------------------
+4) LEARNING A NEW TOPIC
+-------------------------------------
+Role: You are a patient teacher who explains tech to beginners.
+Context: I&#x27;m a [student / working professional] and I know [what you already know, e.g. basic Python]. I&#x27;m learning [topic, e.g. unsupervised learning].
+Task: Explain [topic] so I can understand it in 5 minutes.
+Rules:
+- Use one everyday Indian example.
+- Simple English, short paragraphs, no heavy maths.
+- End with 3 quick questions to test me.
+Example: Explain it the way you&#x27;d explain &quot;supervised learning = learning with labelled answers&quot;.
+
+
+-------------------------------------
+5) RESUME / LINKEDIN
+-------------------------------------
+Role: You are a technical recruiter who screens [role] resumes.
+Context: I&#x27;m applying for [job title] at [type of company]. My experience: [years, key skills, 2–3 achievements].
+Task: Rewrite my resume summary and 3 experience bullet points.
+[Paste current summary and bullets here]
+Rules:
+- Use action verbs and numbers where I have them; don&#x27;t invent numbers.
+- Each bullet under 25 words.
+- Match keywords from this job description: [paste JD]
+Example: &quot;Reduced API latency by 40% by adding Redis caching for hot endpoints.&quot;
+
+
+-------------------------------------
+6) CONTENT / REEL SCRIPT
+-------------------------------------
+Role: You are a viral tech content creator for Instagram Reels.
+Context: My audience is Indian tech fans aged 20–45. I speak Teluglish. Topic: [topic].
+Task: Write a 60-second reel script.
+Rules:
+- Hook in the first 3 seconds.
+- Short spoken lines, Teluglish, keep tech words in English.
+- End with a CTA to comment a keyword.
+Example: Hook style like: &quot;Ee 5 points use cheyakapothe meku proper response raadu!&quot;
+
+
+-------------------------------------
+7) DATA / EXCEL ANALYSIS
+-------------------------------------
+Role: You are a data analyst.
+Context: I have monthly sales data for [business], columns: [list columns]. [Paste a few sample rows or attach the file.]
+Task: Find the top 3 insights and anything unusual.
+Rules:
+- Answer in a table: Insight | Evidence | Suggested action.
+- Mention if the data looks incomplete.
+- Don&#x27;t guess numbers that aren&#x27;t in the data.
+Example: &quot;Insight: Weekend sales are 30% higher | Sat–Sun avg vs weekday avg | Run weekend offers.&quot;
+
+
+-------------------------------------
+QUICK TIPS
+-------------------------------------
+• Be specific — &quot;fix my code&quot; kanna &quot;fix this NullPointerException, show only changed lines&quot; better.
+• One prompt = one main task. Pedda work ni steps ga divide cheyandi.
+• Output nachakapothe, Rules lo correction add chesi malli adagandi.
+• Always review the output — AI can be confidently wrong.
+• Passwords, API keys, customer data, or company code you&#x27;re not allowed to share — paste cheyakandi.
+
+Daily AI topics kosam follow: @augyanix</code></pre></div>
+  </article>
+
+  <p class="back"><a class="more-link mono" href="/resources/">← All resources</a></p>
+  </main>
+
+  <footer>
+    <p class="mono mute">Say hello</p>
+    <p class="mail">augyanix@gmail.com</p>
+    <div class="foot mono">
+      <span>© 2026 Augyanix</span>
+      <a href="https://github.com/augyanix" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </footer>
+</div>
+<script src="/assets/copy.js" defer></script>
+</body>
+</html>

@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://augyanix.in/</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://augyanix.in/resources/</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://augyanix.in/playbook/ai-model/</loc></url>
-  <url><loc>https://augyanix.in/playbook/prompts/</loc></url>
+  <url><loc>https://augyanix.in/playbook/ai-model/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/playbook/prompts/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/ai-roadmap/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/ai-tools-2027-career/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/ai-tools-cheat-sheet-2026/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/ai-agents-list/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/50-free-ai-prompts/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/rctre-prompt-templates/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/cut-token-usage/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://augyanix.in/resources/skill-md-template/</loc><lastmod>2026-11-12</lastmod></url>
 </urlset>
