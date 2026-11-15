@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#FCFCFA">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<title>10 AI Topics Summary · Augyanix</title>
+<meta name="description" content="The ten AI basics from the Bhattu garu podcast special: AI, model, LLM, prompt, prompt life cycle, system prompt, custom instructions, temperature, hallucination and tokens. One idea, one example and one habit each.">
+<link rel="canonical" href="https://augyanix.in/resources/ten-ai-topics/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://augyanix.in/resources/ten-ai-topics/">
+<meta property="og:title" content="10 AI Topics Summary · Augyanix">
+<meta property="og:description" content="Ten AI basics in simple words: one idea, one everyday example and one habit each. Works for every AI app.">
+<meta property="og:image" content="https://augyanix.in/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="/"><span class="px" aria-hidden="true"><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i class="o"></i><i class="y"></i></span>AUGYANIX</a>
+    <div class="links mono">
+      <a href="/#work">Work</a>
+      <a href="/#path">Path</a>
+      <a href="/#teach">Teach</a>
+      <a href="/resources/" aria-current="page">Resources</a>
+    </div>
+  </nav>
+
+  <main id="main">
+  <header class="page-head">
+    <p class="mono kicker"><a href="/resources/">← All resources</a> · Bhattu garu podcast special</p>
+    <h1>10 AI topics, one page.</h1>
+    <p class="intro">Bhattu garu passed the interview. Now it's your turn: every topic in one idea, one everyday example and one habit. Works for every AI app: ChatGPT, Claude, Gemini, Copilot and the rest.</p>
+  </header>
+
+  <article class="prose">
+    <ol class="topic-index" aria-label="The ten topics">
+      <li><a href="#ai"><span class="mono">01</span>AI</a></li>
+      <li><a href="#model"><span class="mono">02</span>AI model</a></li>
+      <li><a href="#llm"><span class="mono">03</span>LLM</a></li>
+      <li><a href="#prompt"><span class="mono">04</span>Prompt</a></li>
+      <li><a href="#lifecycle"><span class="mono">05</span>Prompt life cycle</a></li>
+      <li><a href="#system-prompt"><span class="mono">06</span>System prompt</a></li>
+      <li><a href="#custom-instructions"><span class="mono">07</span>Custom instructions</a></li>
+      <li><a href="#temperature"><span class="mono">08</span>Temperature</a></li>
+      <li><a href="#hallucination"><span class="mono">09</span>Hallucination</a></li>
+      <li><a href="#tokens"><span class="mono">10</span>Tokens</a></li>
+    </ol>
+
+    <section class="topic" id="ai" aria-labelledby="t1">
+      <p class="mono mute">01</p>
+      <h2 id="t1">AI ante enti?</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>Getting computers to do jobs that normally need human intelligence: understanding language, recognising pictures, making decisions.</dd>
+        <dt>Example</dt><dd>Your phone gallery finds every photo of your friend when you search their name. Nobody tagged them; the AI learned to recognise faces.</dd>
+        <dt>Habit</dt><dd>Treat AI as a smart helper, not magic. It learns patterns from data, so it can be very useful and still be wrong.</dd>
+      </dl>
+    </section>
+
+    <section class="topic" id="model" aria-labelledby="t2">
+      <p class="mono mute">02</p>
+      <h2 id="t2">AI model ante?</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>The engine that actually gives the answer. It is trained on data, and what it learned is saved as billions of numbers called parameters (or weights).</dd>
+        <dt>Example</dt><dd>You ask a doubt on WhatsApp. WhatsApp is just the window; your friend gives the answer. In the same way, the AI app is the chat window and the model behind it gives the reply.</dd>
+        <dt>Habit</dt><dd>Pick the model that fits the job. Small models are fast and cheap for simple work; big models are slower and cost more, so save them for hard thinking.</dd>
+      </dl>
+      <p class="more">Go deeper: <a href="/playbook/ai-model/">Complete AI Model Playbook</a></p>
+    </section>
+
+    <section class="topic" id="llm" aria-labelledby="t3">
+      <p class="mono mute">03</p>
+      <h2 id="t3">LLM ante?</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>Large Language Model: a model trained on a huge amount of text. It understands your text and writes new text by predicting the next small piece of a word, again and again.</dd>
+        <dt>Example</dt><dd>Writing an email, summarising a long message, translating, explaining a topic simply. The chat AI apps you use run on LLMs.</dd>
+        <dt>Habit</dt><dd>Use it for language work: drafts, summaries, explanations. It writes what <em>sounds</em> right, so check any fact it states before you use it.</dd>
+      </dl>
+    </section>
+
+    <section class="topic" id="prompt" aria-labelledby="t4">
+      <p class="mono mute">04</p>
+      <h2 id="t4">Prompt ante?</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>The instruction you give the AI. A good prompt has four parts: role, task, context and format.</dd>
+        <dt>Example</dt><dd>"Write a leave mail" can come back with a fever you don't have. Add the context: "You are an office assistant. Write a leave mail to my manager for Friday and Monday, my cousin's wedding in Vizag. Five lines, polite."</dd>
+        <dt>Habit</dt><dd>Never skip the context. Without it the AI guesses and writes for everyone, not for you.</dd>
+      </dl>
+      <p class="more">Ready to copy: <a href="/playbook/prompts/">Ready-Made AI Prompts</a> · <a href="/resources/rctre-prompt-templates/">RCTRE Prompt Templates</a></p>
+    </section>
+
+    <section class="topic" id="lifecycle" aria-labelledby="t5">
+      <p class="mono mute">05</p>
+      <h2 id="t5">Prompt life cycle</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>What happens in the few seconds after you press Enter: your prompt goes to a server, is cut into tokens, turned into numbers, and the model builds the reply one token at a time.</dd>
+        <dt>Example</dt><dd>You ask "Why is the sky blue?" The reply appears word by word on your screen because the model is still writing it. That is called streaming.</dd>
+        <dt>Habit</dt><dd>If a reply starts going the wrong way, stop it and rewrite your prompt. Every next word builds on the words before it, so a bad start rarely fixes itself.</dd>
+      </dl>
+      <ol class="flow" aria-label="Prompt life cycle steps">
+        <li>Your prompt</li><li>Server</li><li>Tokens</li><li>Numbers</li><li>Model</li><li>Reply, token by token</li>
+      </ol>
+    </section>
+
+    <section class="topic" id="system-prompt" aria-labelledby="t6">
+      <p class="mono mute">06</p>
+      <h2 id="t6">System prompt</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>Instructions the model receives before your message, telling it how to behave. The app or the developer writes them; you usually don't see them.</dd>
+        <dt>Example</dt><dd>A shop's support chatbot is told up front: "Answer only about our products, be polite, reply in short steps." Every customer chat follows that.</dd>
+        <dt>Habit</dt><dd>If you build with AI, keep the system prompt short and general. It goes with every single request, and a narrow rule there affects every answer.</dd>
+      </dl>
+    </section>
+
+    <section class="topic" id="custom-instructions" aria-labelledby="t7">
+      <p class="mono mute">07</p>
+      <h2 id="t7">Custom instructions</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>Your own standing preferences, saved once in the AI app's settings, so you don't repeat them in every chat. It is your personal system prompt.</dd>
+        <dt>Example</dt><dd>At the tea stall you said "sugar takkuva" once; now "one tea" is enough. Same here: "Explain simply, with everyday examples" saved once applies to every chat.</dd>
+        <dt>Habit</dt><dd>Write only your general style. A rule like "answer in two lines" also cuts your resume and reports to two lines, because it applies to every chat.</dd>
+      </dl>
+    </section>
+
+    <section class="topic" id="temperature" aria-labelledby="t8">
+      <p class="mono mute">08</p>
+      <h2 id="t8">Temperature</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>A setting that controls how random the AI's word choices are. Low temperature: almost the same answer every time. High temperature: more variety and creative answers. (Not a fever, Bhattu garu!)</dd>
+        <dt>Example</dt><dd>Ask amma "what's for tiffin?" Most days idli, some days dosa, once in a while upma. Ask the AI the same question twice and you can get two different answers the same way.</dd>
+        <dt>Habit</dt><dd>For ideas and captions, ask again to get new options. For a fact or a number, ask the same question twice: if the two answers differ, it may be a guess, so check it yourself.</dd>
+      </dl>
+    </section>
+
+    <section class="topic" id="hallucination" aria-labelledby="t9">
+      <p class="mono mute">09</p>
+      <h2 id="t9">Hallucination</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>When the AI says something false with full confidence. It is not lying; it predicts words that sound correct, and when it doesn't know, it fills the gap instead of saying "I don't know".</dd>
+        <dt>Example</dt><dd>A lawyer in the US submitted court cases that an AI chat had given him. The cases did not exist, and the court fined him.</dd>
+        <dt>Habit</dt><dd>For names, numbers, links, medicine, law and money, never trust the answer directly. Ask for the source, then open that link yourself: AI can make up sources too.</dd>
+      </dl>
+    </section>
+
+    <section class="topic" id="tokens" aria-labelledby="t10">
+      <p class="mono mute">10</p>
+      <h2 id="t10">Tokens</h2>
+      <dl class="tri">
+        <dt>Idea</dt><dd>The small pieces the AI cuts text into before reading it. A token can be a whole word or part of one. Usage limits and costs are counted in tokens, not messages.</dd>
+        <dt>Example</dt><dd>Your mobile data pack counts MBs, not videos. AI counts tokens the same way. And each time you send a message, the whole old chat goes to the model again, so even "ok" in a long chat costs a lot of tokens.</dd>
+        <dt>Habit</dt><dd>New topic, new chat. Your limit lasts much longer.</dd>
+      </dl>
+      <p class="more">More habits: <a href="/resources/cut-token-usage/">Cut Token Usage: 360° Guide</a></p>
+    </section>
+
+    <hr>
+    <h2>Ten habits, one list</h2>
+    <ol>
+      <li>AI is a smart helper, not magic.</li>
+      <li>Pick the model that fits the job.</li>
+      <li>Use LLMs for language work; check the facts.</li>
+      <li>Always give context in your prompt.</li>
+      <li>Bad start? Stop and rewrite the prompt.</li>
+      <li>Keep system prompts short and general.</li>
+      <li>Custom instructions: general style only.</li>
+      <li>Facts: ask twice; if answers differ, check.</li>
+      <li>Names, numbers, links, medicine, law, money: open the source yourself.</li>
+      <li>New topic, new chat.</li>
+    </ol>
+    <p class="b">New topics every day in the series. Full path: <a href="/resources/ai-roadmap/">AI Roadmap</a>. Follow <a href="https://www.instagram.com/augyanix/" target="_blank" rel="noopener">@augyanix</a> so you don't miss a day.</p>
+    <p class="mute">Mana AI Rachabanda… Augyanix tho!</p>
+  </article>
+
+  <p class="back"><a class="more-link mono" href="/resources/">← All resources</a></p>
+  </main>
+
+  <footer>
+    <p class="mono mute">Say hello</p>
+    <p class="mail">augyanix@gmail.com</p>
+    <div class="foot mono">
+      <span>© 2026 Augyanix</span>
+      <span class="social">
+        <a href="https://www.instagram.com/augyanix/" target="_blank" rel="noopener me">Instagram ↗</a>
+        <a href="https://www.youtube.com/@augyanix" target="_blank" rel="noopener me">YouTube ↗</a>
+        <a href="https://www.linkedin.com/in/maadhava-rao/" target="_blank" rel="noopener me">LinkedIn ↗</a>
+        <a href="https://github.com/augyanix" target="_blank" rel="noopener me">GitHub ↗</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

@@ -240,3 +240,29 @@ footer { margin-top: var(--section); border-top: 1px solid var(--line); padding-
 @media (max-width: 860px) { .ideas, .cards.two { grid-template-columns: minmax(0, 1fr); } }
 .prose p.b { font-weight: 500; }
 .social { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+
+/* Topic summary pages (e.g. /resources/ten-ai-topics/) */
+.prose .topic-index { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.prose .topic-index a { display: flex; gap: 0.6rem; align-items: baseline; padding: 0.6rem 0.8rem; min-height: 44px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 500; }
+.prose .topic-index a:hover { background: #FFF8DC; border-color: var(--yellow); }
+.prose .topic-index a { overflow-wrap: normal; }
+.prose .topic-index .mono { flex: none; min-width: 1.4rem; color: var(--mute); font-size: 0.72rem; }
+.prose .topic { padding-top: 0; margin-top: 2.75rem; scroll-margin-top: 1rem; }
+.prose .topic > * + * { margin-top: 0.6rem; }
+.prose .topic h2 { margin-top: 0.2rem; }
+.prose .tri { display: grid; grid-template-columns: 6rem minmax(0, 1fr); margin-top: 1rem; border-top: 1px solid var(--line); }
+.prose .tri dt, .prose .tri dd { margin: 0; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+.prose .tri dt { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); padding-top: 0.95rem; }
+.prose .tri dt:nth-of-type(3) { color: var(--ink); }
+.prose .tri dd:nth-of-type(3) { font-weight: 500; background: #FFF8DC; border-left: 3px solid var(--yellow); padding-left: 0.8rem; }
+.prose .more { font-size: 0.98rem; color: var(--mute); }
+.prose ol.flow { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.prose ol.flow li { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.6rem; background: var(--ink); color: var(--paper); clip-path: var(--notch); }
+.prose ol.flow li:last-child { background: var(--yellow); color: var(--ink); }
+@media (max-width: 560px) {
+  .prose .topic-index { grid-template-columns: minmax(0, 1fr); }
+  .prose .tri { grid-template-columns: minmax(0, 1fr); }
+  .prose .tri dt { padding: 0.75rem 0 0; border-bottom: 0; }
+  .prose .tri dd { padding-top: 0.2rem; }
+  .prose .tri dd:nth-of-type(3) { padding-top: 0.6rem; }
+}

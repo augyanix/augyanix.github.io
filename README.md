@@ -8,6 +8,7 @@ Personal site of **Maadhava Rao** (Augyanix): profile, projects, and free hands-
 | Free resources | `/resources/` | The hub for every reel / DM resource |
 | Day 5 · Complete AI Model Playbook | `/playbook/ai-model/` | Self-contained page |
 | Day 7 · Ready-Made AI Prompts | `/playbook/prompts/` | Self-contained page |
+| Special 1 · 10 AI Topics Summary | `/resources/ten-ai-topics/` | Bhattu garu podcast DM page |
 | Not found | `404.html` | GitHub Pages serves it for unknown paths |
 
 ## How it is built
