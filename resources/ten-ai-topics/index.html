@@ -62,6 +62,11 @@
         <dt>Example</dt><dd>Your phone gallery finds every photo of your friend when you search their name. Nobody tagged them; the AI learned to recognise faces.</dd>
         <dt>Habit</dt><dd>Treat AI as a smart helper, not magic. It learns patterns from data, so it can be very useful and still be wrong.</dd>
       </dl>
+      <figure class="viz"><div class="vflow">
+  <div class="box"><b>Jobs that need a human brain</b><small>read · see · decide</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box dark"><b>Computer learns them from data</b><small>patterns, not rules typed by hand</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box y"><b>That is AI</b><small>gallery search, maps, chat apps</small></div>
+</div><figcaption>AI = a computer doing a "thinking" job, learned from examples.</figcaption></figure>
     </section>
 
     <section class="topic" id="model" aria-labelledby="t2">
@@ -72,6 +77,14 @@
         <dt>Example</dt><dd>You ask a doubt on WhatsApp. WhatsApp is just the window; your friend gives the answer. In the same way, the AI app is the chat window and the model behind it gives the reply.</dd>
         <dt>Habit</dt><dd>Pick the model that fits the job. Small models are fast and cheap for simple work; big models are slower and cost more, so save them for hard thinking.</dd>
       </dl>
+      <figure class="viz"><div class="vflow">
+  <div class="box"><b>You</b><small>type a question</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>App</b><small>the chat window</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box dark"><b>Model</b><small>billions of learned numbers</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box y"><b>Answer</b></div>
+</div>
+<div class="vpair"><div><b>Small model</b><small>fast, cheap, can run on a laptop. Simple jobs.</small></div><div><b>Big model</b><small>slower, costs more. Hard thinking.</small></div></div>
+<figcaption>The app is the window. The model is the brain behind it.</figcaption></figure>
       <p class="more">Go deeper: <a href="/playbook/ai-model/">Complete AI Model Playbook</a></p>
     </section>
 
@@ -83,6 +96,12 @@
         <dt>Example</dt><dd>Writing an email, summarising a long message, translating, explaining a topic simply. The chat AI apps you use run on LLMs.</dd>
         <dt>Habit</dt><dd>Use it for language work: drafts, summaries, explanations. It writes what <em>sounds</em> right, so check any fact it states before you use it.</dd>
       </dl>
+      <figure class="viz"><span class="lbl">What comes next?</span><div class="vbars">
+  <p class="q">"The sky is <mark>___</mark>"</p>
+  <div class="b top w1"><span>blue</span><i></i></div>
+  <div class="b w2"><span>clear</span><i></i></div>
+  <div class="b w3"><span>falling</span><i></i></div>
+</div><figcaption>An LLM picks the next piece from a list of likely options, adds it, and repeats until the answer is done. (Bars are an illustration, not real scores.)</figcaption></figure>
     </section>
 
     <section class="topic" id="prompt" aria-labelledby="t4">
@@ -93,6 +112,12 @@
         <dt>Example</dt><dd>"Write a leave mail" can come back with a fever you don't have. Add the context: "You are an office assistant. Write a leave mail to my manager for Friday and Monday, my cousin's wedding in Vizag. Five lines, polite."</dd>
         <dt>Habit</dt><dd>Never skip the context. Without it the AI guesses and writes for everyone, not for you.</dd>
       </dl>
+      <figure class="viz"><span class="lbl">A good prompt, part by part</span><div class="vstack">
+  <div class="seg"><span>Role</span><span>"You are an office assistant."</span></div>
+  <div class="seg"><span>Task</span><span>"Write a leave mail to my manager."</span></div>
+  <div class="seg warn"><span>Context <em class="flag">MOST MISSED</em></span><span>"Friday and Monday, my cousin's wedding in Vizag."</span></div>
+  <div class="seg"><span>Format</span><span>"Five lines, polite."</span></div>
+</div><figcaption>Put all four together in one message. Context is what makes the answer yours.</figcaption></figure>
       <p class="more">Ready to copy: <a href="/playbook/prompts/">Ready-Made AI Prompts</a> · <a href="/resources/rctre-prompt-templates/">RCTRE Prompt Templates</a></p>
     </section>
 
@@ -104,9 +129,14 @@
         <dt>Example</dt><dd>You ask "Why is the sky blue?" The reply appears word by word on your screen because the model is still writing it. That is called streaming.</dd>
         <dt>Habit</dt><dd>If a reply starts going the wrong way, stop it and rewrite your prompt. Every next word builds on the words before it, so a bad start rarely fixes itself.</dd>
       </dl>
-      <ol class="flow" aria-label="Prompt life cycle steps">
-        <li>Your prompt</li><li>Server</li><li>Tokens</li><li>Numbers</li><li>Model</li><li>Reply, token by token</li>
-      </ol>
+      <figure class="viz"><span class="lbl">After you press Enter</span><div class="vflow">
+  <div class="box"><b>Your prompt</b></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>Server</b><small>in a data centre</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>Tokens</b><small>small pieces</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>Numbers</b><small>embeddings</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box dark"><b>Model</b><small>on GPUs</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box y"><b>Reply</b><small>one token at a time</small></div>
+</div></figure>
     </section>
 
     <section class="topic" id="system-prompt" aria-labelledby="t6">
@@ -117,6 +147,15 @@
         <dt>Example</dt><dd>A shop's support chatbot is told up front: "Answer only about our products, be polite, reply in short steps." Every customer chat follows that.</dd>
         <dt>Habit</dt><dd>If you build with AI, keep the system prompt short and general. It goes with every single request, and a narrow rule there affects every answer.</dd>
       </dl>
+      <figure class="viz"><span class="lbl">What the model reads, in order, every time</span><div class="vflow">
+  <div class="vstack box-col">
+    <div class="seg dark"><span>System prompt</span><small>from the app, hidden</small></div>
+    <div class="seg"><span>Custom instructions</span><small>from your settings</small></div>
+    <div class="seg"><span>Chat so far</span><small>older messages</small></div>
+    <div class="seg y"><span>Your message</span><small>what you just typed</small></div>
+  </div><span class="arr" aria-hidden="true"></span>
+  <div class="box dark"><b>Model</b><small>answers using all of it</small></div>
+</div><figcaption>The system prompt sits on top of every chat, so a narrow rule there changes every answer.</figcaption></figure>
     </section>
 
     <section class="topic" id="custom-instructions" aria-labelledby="t7">
@@ -127,6 +166,12 @@
         <dt>Example</dt><dd>At the tea stall you said "sugar takkuva" once; now "one tea" is enough. Same here: "Explain simply, with everyday examples" saved once applies to every chat.</dd>
         <dt>Habit</dt><dd>Write only your general style. A rule like "answer in two lines" also cuts your resume and reports to two lines, because it applies to every chat.</dd>
       </dl>
+      <figure class="viz"><div class="vflow">
+  <div class="box y"><b>Saved once</b><small>"Explain simply, with everyday examples."</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>Chat 1 ✓</b><b>Chat 2 ✓</b><b>Chat 3 ✓</b><small>every chat follows it</small></div>
+</div>
+<p class="trap">⚠️ Saved "Answer in two lines"? Then your resume also comes back in two lines. Keep only your general style here.</p>
+</figure>
     </section>
 
     <section class="topic" id="temperature" aria-labelledby="t8">
@@ -137,6 +182,9 @@
         <dt>Example</dt><dd>Ask amma "what's for tiffin?" Most days idli, some days dosa, once in a while upma. Ask the AI the same question twice and you can get two different answers the same way.</dd>
         <dt>Habit</dt><dd>For ideas and captions, ask again to get new options. For a fact or a number, ask the same question twice: if the two answers differ, it may be a guess, so check it yourself.</dd>
       </dl>
+      <figure class="viz vtemp"><span class="lbl">Temperature</span><div class="bar" aria-hidden="true"></div>
+<div class="ends"><div><b>Low</b><small>idli every day: almost the same answer. Good for facts and summaries.</small></div><div><b>High</b><small>idli, dosa, upma: new answers. Good for ideas and captions.</small></div></div>
+<figcaption>Chat apps choose this for you. In AI developer tools you can set it yourself.</figcaption></figure>
     </section>
 
     <section class="topic" id="hallucination" aria-labelledby="t9">
@@ -147,6 +195,12 @@
         <dt>Example</dt><dd>A lawyer in the US submitted court cases that an AI chat had given him. The cases did not exist, and the court fined him.</dd>
         <dt>Habit</dt><dd>For names, numbers, links, medicine, law and money, never trust the answer directly. Ask for the source, then open that link yourself: AI can make up sources too.</dd>
       </dl>
+      <figure class="viz"><span class="lbl">The 10-second check</span><div class="vflow">
+  <div class="box warn"><b>AI answer</b><small>sounds confident</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>Ask for the source</b><small>"Give me the link"</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box"><b>Open it yourself</b><small>does it really say that?</small></div><span class="arr" aria-hidden="true"></span>
+  <div class="box y"><b>Then use it</b></div>
+</div><figcaption>Confident does not mean correct. The link you open yourself is the proof.</figcaption></figure>
     </section>
 
     <section class="topic" id="tokens" aria-labelledby="t10">
@@ -157,6 +211,13 @@
         <dt>Example</dt><dd>Your mobile data pack counts MBs, not videos. AI counts tokens the same way. And each time you send a message, the whole old chat goes to the model again, so even "ok" in a long chat costs a lot of tokens.</dd>
         <dt>Habit</dt><dd>New topic, new chat. Your limit lasts much longer.</dd>
       </dl>
+      <figure class="viz"><span class="lbl">Text cut into tokens (example split)</span><div class="vtok"><span>Hyder</span><span>abad</span><span> bir</span><span>yani</span></div>
+<div class="vgrow"><span class="lbl">Tokens sent with each new message</span>
+  <div class="r"><span>Message 1</span><span><i class="n"></i></span></div>
+  <div class="r"><span>Message 2</span><span><i></i><i class="n"></i></span></div>
+  <div class="r"><span>Message 3</span><span><i></i><i></i><i class="n"></i></span></div>
+  <div class="r"><span>Message 10</span><span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="n"></i></span></div>
+</div><figcaption>Each AI cuts text a little differently. Grey = old chat sent again, yellow = your new message. A long chat eats your limit fast.</figcaption></figure>
       <p class="more">More habits: <a href="/resources/cut-token-usage/">Cut Token Usage: 360° Guide</a></p>
     </section>
 
