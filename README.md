@@ -9,6 +9,7 @@ Personal site of **Maadhava Rao** (Augyanix): profile, projects, and free hands-
 | Day 5 · Complete AI Model Playbook | `/playbook/ai-model/` | Self-contained page |
 | Day 7 · Ready-Made AI Prompts | `/playbook/prompts/` | Self-contained page |
 | Day 14 · Which AI Agent for Which Job | `/playbook/agents/` | Self-contained page; DM page for the Day 14 keyword AGENT. Facts checked on vendor pages Nov 2026: re-check when a vendor renames a product |
+| Day 16 · RAG Complete Guide | `/playbook/rag/` | Self-contained page; DM page for the Day 16 keyword RAG. Built from IBM, AWS, Google Cloud, Microsoft, NVIDIA, Anthropic and the 2020 RAG paper (checked 24 Nov 2026; references at the bottom of the page) |
 | AI Topics Summary (Day 1 to Day 12) | `/resources/ten-ai-topics/` | Every series topic in day order + "last 3 reels" summary (`#last-3`); DM page for the podcast special and the Day 12 comment DM. Add each new day here |
 | Not found | `404.html` | GitHub Pages serves it for unknown paths |
 
