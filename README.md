@@ -6,6 +6,8 @@ Personal site of **Maadhava Rao** (Augyanix): profile, projects, and free hands-
 |---|---|---|
 | Home | `/` | Profile, work, career "traceroute", teaching, top resources |
 | Free resources | `/resources/` | The hub for every reel / DM resource |
+| AI Tools | `/ai-tools/` | Hub for the interactive tools (Token Lab, Meaning Meter, Mango Brain). Add each new tool here and in the "Interactive AI tools" group on `/resources/` |
+| Token Lab | `/ai-tools/tokenizer/` | Interactive BPE tokenizer. The only page with JavaScript: its CSP allows `script-src 'self'` and its CSS/JS live in the same folder. Mango Brain and Meaning Meter are separate repos served at `/mango-brain/` and `/meaning-meter/` |
 | Day 5 · Complete AI Model Playbook | `/playbook/ai-model/` | Self-contained page |
 | Day 7 · Ready-Made AI Prompts | `/playbook/prompts/` | Self-contained page |
 | Day 14 · Which AI Agent for Which Job | `/playbook/agents/` | Self-contained page; DM page for the Day 14 keyword AGENT. Facts checked on vendor pages Nov 2026: re-check when a vendor renames a product |

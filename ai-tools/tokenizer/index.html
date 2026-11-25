@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0D121D">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/ai-tools/tokenizer/tokenizer.css">
+<title>Token Lab · Augyanix</title>
+<meta name="description" content="AI text ni tokens ga ela kosthundho live lo chudandi. Mee browser lo oka chinna tokenizer ni train cheyyandi. Download ledu, code ledu.">
+<link rel="canonical" href="https://augyanix.in/ai-tools/tokenizer/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://augyanix.in/ai-tools/tokenizer/">
+<meta property="og:title" content="Token Lab · Augyanix">
+<meta property="og:description" content="Type cheyyandi, tokens chudandi. BPE tokenizer ni step by step train cheyyandi, Telugu lo nerchukondi.">
+<meta property="og:image" content="https://augyanix.in/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script src="/ai-tools/tokenizer/tokenizer.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="backdrop" aria-hidden="true"></div>
+<div class="app">
+<div class="wrap">
+
+  <header class="topbar">
+    <a class="logo" href="/ai-tools/"><i aria-hidden="true"></i>Augyanix · AI Tools</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#live">Try</a>
+      <a href="#train">Train</a>
+      <a href="#cost">Telugu cost</a>
+      <a href="#learn">Learn</a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+
+  <!-- ================= 1. Live ================= -->
+  <section class="hero sec" id="live">
+    <div class="hero-head">
+      <div class="eyebrow">Token Lab · AI in Telugu</div>
+      <h1>AI words chadhavadhu. <span class="soft">Tokens chaduvuthundhi.</span></h1>
+      <p class="lede">Kinda type cheyyandi. AI mee text ni chinna mukkalu (tokens) ga ela kosthundho, prathi mukka ki ye number isthundho live lo chudandi.</p>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <label class="lbl" for="liveText">Mee text</label>
+        <textarea id="liveText" spellcheck="false">Nenu prathi roju AI nerchukuntunnanu. I am learning AI every day.</textarea>
+      </div>
+      <div class="chips" aria-label="Examples">
+        <button class="chip" type="button" data-sample="Interview ki prepare avvali ante prathi roju konchem nerchukovaali.">Teluglish</button>
+        <button class="chip" type="button" data-sample="The model reads tokens, not words.">English</button>
+        <button class="chip" type="button" data-sample="నేను AI నేర్చుకుంటున్నాను.">Telugu script</button>
+        <button class="chip" type="button" data-sample="strawberry lo entha r lu unnaayi?">strawberry</button>
+        <button class="chip" type="button" data-sample="Gold rate 12,345.67 rupees on 25-11-2026">Numbers</button>
+      </div>
+      <div class="tokens" id="liveTokens" aria-live="polite"></div>
+      <div class="actions">
+        <label class="toggle"><input type="checkbox" id="showIds"> Token IDs chupinchu</label>
+        <span class="fine">· ante space. Prathi rangu oka token.</span>
+      </div>
+      <p class="fine" id="unkNote" hidden>⚠️ <b id="unkCount">0</b> character(s) ee mini tokenizer training lo ledhu (dotted box). Real tokenizers bytes nunchi start chesthaayi kaabatti vaatiki ee problem undadhu.</p>
+      <div class="stats">
+        <div class="stat"><b id="sChars">0</b><span>Characters</span></div>
+        <div class="stat"><b id="sBytes">0</b><span>Bytes (UTF-8)</span></div>
+        <div class="stat hl"><b id="sTokens">0</b><span>Tokens</span></div>
+        <div class="stat"><b id="sRatio">0</b><span>Characters / token</span></div>
+      </div>
+      <div class="slider">
+        <div class="slider-top">
+          <label class="lbl" for="mergeSlider">Vocabulary size</label>
+          <span class="fine">merges <b id="mergeCount">0</b> / <span id="maxMerges">0</span> · vocab <b id="vocabSize">0</b> tokens</span>
+        </div>
+        <input type="range" id="mergeSlider" min="0" max="100" value="100">
+        <div class="scale"><span>0: prathi letter oka token</span><span>ekkuva merges: thakkuva tokens</span></div>
+      </div>
+      <p class="fine">Slider ni edama ki laagandi: vocabulary chinnadhi ayithe, adhe text ki ekkuva tokens kaavaali. Anduke real models ki 100,000+ tokens vocabulary untundhi.</p>
+    </div>
+  </section>
+
+  <!-- ================= 2. Train ================= -->
+  <section class="sec" id="train">
+    <div class="sec-head">
+      <div class="eyebrow">Step by step</div>
+      <h2>Tokenizer ela nerchukuntundhi? Meere train cheyyandi.</h2>
+      <p>Idhi <strong>BPE</strong> (Byte Pair Encoding): ekkuva saarlu pakka pakkana vachhe rendu mukkalni okati ga kalapadam, malli malli. "Okka merge" nokkandi, prathi step lo ye janta gelichindho chudandi.</p>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <label class="lbl" for="trainText">Training text (maarchi chudandi)</label>
+        <textarea id="trainText" spellcheck="false">nenu chesthunna, nuvvu chesthunnava, memu chesthunnamu, vallu chesthunnaru</textarea>
+      </div>
+      <div class="actions">
+        <button class="go" type="button" id="stepBtn">Okka merge</button>
+        <button class="ghost" type="button" id="playBtn">▶ Auto play</button>
+        <button class="ghost" type="button" id="resetBtn">Reset</button>
+      </div>
+      <p class="explain" id="explain" aria-live="polite"></p>
+      <div class="tokens show-ids" id="trainTokens"></div>
+      <div class="stats three">
+        <div class="stat hl"><b id="tTokens">0</b><span>Tokens</span></div>
+        <div class="stat"><b id="tVocab">0</b><span>Vocabulary size</span></div>
+        <div class="stat"><b id="tMerges">0</b><span>Merges nerchukundhi</span></div>
+      </div>
+      <div class="trainer">
+        <div class="box">
+          <h3>Merge rules (order lo)</h3>
+          <ol class="merge-log" id="mergeLog"></ol>
+        </div>
+        <div class="box">
+          <h3>Top pairs ippudu</h3>
+          <table class="pairs"><tbody id="pairTable"></tbody></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. Cost ================= -->
+  <section class="sec" id="cost">
+    <div class="sec-head">
+      <div class="eyebrow">Same meaning, different cost</div>
+      <h2>Telugu lo adigithe ekkuva tokens. Enduku?</h2>
+      <p>Okate meaning, moodu rakaaluga. Ee mini tokenizer ki training lo English, Teluglish ekkuva ichhamu, Telugu script chaala thakkuva. Real models training data lo kuda English ekkuva undhi, anduke adhe problem kanipisthundhi.</p>
+    </div>
+    <div class="panel">
+      <div class="langs" id="langs"></div>
+      <p class="fine">Telugu letter okati UTF-8 lo 3 bytes theesukuntundhi, English letter 1 byte. Training lo thakkuva chusina script ni tokenizer chinna chinna mukkalu ga kosthundhi. Ekkuva tokens ante: ekkuva cost, ekkuva time, context window tondharaga nindipothundhi. Research: Petrov et al., "Language Model Tokenizers Introduce Unfairness Between Languages" (NeurIPS 2023).</p>
+    </div>
+  </section>
+
+  <!-- ================= Learn ================= -->
+  <div class="divider" id="learn">
+    <div class="line" aria-hidden="true"></div>
+    <div class="eyebrow">Ippudu nerchukundhaam</div>
+    <h2>Tokenization, Telugu lo</h2>
+    <p>Meeru ippude chesindhi real AI models chese modhati pani. Idhi enduku, ela, ekkada break avthundhi.</p>
+  </div>
+
+  <section class="sec lesson">
+    <span class="n">01</span>
+    <div class="body">
+      <h3>Token ante enti?</h3>
+      <p>AI ki letters, words ardham kaavu. Adhi <strong>numbers</strong> maathrame chaduvuthundhi. Tokenizer text ni chinna mukkalu (tokens) ga kosi, prathi mukka ki oka fixed number (<strong>token ID</strong>) isthundhi. Aa IDs list ne model loki velthundhi.</p>
+      <div class="flow" aria-label="Text to model flow">
+        <div class="node"><small>Text</small><b>"I am learning"</b></div><span class="arr">→</span>
+        <div class="node hl"><small>Tokenizer</small><b>I | am | learning</b></div><span class="arr">→</span>
+        <div class="node"><small>Token IDs</small><b>[40, 939, 7524]</b></div><span class="arr">→</span>
+        <div class="node"><small>Model</small><b>embeddings</b></div>
+      </div>
+      <p class="fine">IDs ikkada example kosam. Prathi model ki dhaani sontha tokenizer, sontha numbers untaayi.</p>
+    </div>
+  </section>
+
+  <section class="sec lesson">
+    <span class="n">02</span>
+    <div class="body">
+      <h3>Letters enduku kaadhu, words enduku kaadhu?</h3>
+      <div class="versus">
+        <div><b>Letters maathrame</b>Vocabulary chinnadhi, kaani prathi sentence chaala pedda list avthundhi. Model ki slow, context tondharaga nindipothundhi.</div>
+        <div><b>Full words maathrame</b>Kotha word ("nerchukuntunnanu", typo, kotha app name) vasthe ID ledhu. Vocabulary millions lo kaavaali.</div>
+        <div class="win"><b>Subwords (BPE) ✅</b>Common words okka token, kotha words thelisina mukkalu ga. Size, coverage rendu balance.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec lesson">
+    <span class="n">03</span>
+    <div class="body">
+      <h3>BPE: 4 steps lo</h3>
+      <p><strong>BPE = Byte Pair Encoding.</strong> Byte ante computer lo data chinna unit (8 bits). Pair ante pakka pakkana unna rendu mukkalu. Encoding ante text ni numbers ga maarchadam.</p>
+      <ol class="stepsx">
+        <li><span><b>Pre-split:</b> text ni words ga vidadheeyi, mundhu space tho saha (" learning").</span></li>
+        <li><span><b>Base vocabulary:</b> prathi letter (real models lo prathi byte, 256) oka token.</span></li>
+        <li><span><b>Count + merge:</b> antha text lo ekkuva saarlu vachhe janta ni okati chesi kotha token. Aa rule ni order lo save chey.</span></li>
+        <li><span><b>Repeat:</b> vocabulary target size (oka 100,000 or 200,000) vachhe varaku step 3.</span></li>
+      </ol>
+      <p>Kotha text vachhinappudu, tokenizer aa merge rules ni <strong>adhe order lo</strong> apply chesthundhi. Anduke same text ki eppudu same tokens vasthaayi.</p>
+    </div>
+  </section>
+
+  <section class="sec lesson">
+    <span class="n">04</span>
+    <div class="body">
+      <h3>Idhi meeku enduku mukhyam?</h3>
+      <ol class="stepsx">
+        <li><span><b>Cost:</b> AI APIs "per million tokens" lekka lo bill chesthaayi. Ekkuva tokens = ekkuva dabbulu.</span></li>
+        <li><span><b>Context window:</b> model okka saari entha chadhavagaladho adhi tokens lo kolustharu, words lo kaadhu.</span></li>
+        <li><span><b>Speed:</b> model okka token ki okka step lo answer raasthundhi. Ekkuva tokens = ekkuva time.</span></li>
+      </ol>
+      <p class="fine">Rough rule: English lo oka token sumaaru 4 characters. Telugu script lo idhi chaala thakkuva, paina chusaaru.</p>
+    </div>
+  </section>
+
+  <section class="sec lesson">
+    <span class="n">05</span>
+    <div class="body">
+      <h3>Technical catch: ekkada break avthundhi</h3>
+      <ul class="limits">
+        <li><span class="tag">Spelling</span><b>"strawberry" lo entha r lu?</b><span>Model ki letters kanipinchavu, "straw" + "berry" laanti tokens maathrame. Anduke letter counting lo thappu chesthundhi.</span></li>
+        <li><span class="tag">Numbers</span><b>12345 okka number kaadhu</b><span>Numbers mukkalu ga kosthaaru ("123" + "45"), anduke pedda lekkalu AI ki kashtam. Calculator tool vaadandi.</span></li>
+        <li><span class="tag">Language</span><b>Telugu ki ekkuva tokens</b><span>Training data lo English ekkuva, anduke Telugu, Hindi laanti scripts ki adhe meaning ki ekkuva tokens, ekkuva cost.</span></li>
+        <li><span class="tag">Mini vs real</span><b>Ee page oka chinna version</b><span>Memu letters nunchi start chesaamu (chadhavadaaniki easy), real models bytes nunchi. Ikkada ~200 merges, real lo 100,000+.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="recap">
+    <div class="eyebrow">Recap</div>
+    <ol>
+      <li>AI text ni tokens ga kosi, prathi token ki oka ID isthundhi. Model numbers ne chaduvuthundhi.</li>
+      <li>BPE: ekkuva saarlu vachhe janta ni kalipi kotha token, malli malli.</li>
+      <li>Cost, context window, speed anni tokens lo ne lekka.</li>
+      <li>Do today: mee regular prompt ni English lo, Telugu lo ikkada paste chesi token count compare cheyyandi.</li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><div class="eyebrow">Next try cheyyandi</div></div>
+    <div class="more">
+      <a href="/meaning-meter/"><b>Meaning Meter →</b><span>Token IDs tarvatha embeddings: meaning ni numbers ga.</span></a>
+      <a href="/mango-brain/"><b>Mango Brain →</b><span>Oka chinna neural network ni meere train cheyyandi.</span></a>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <span>Token Lab · Augyanix · AI in Telugu · Mee text mee browser lone untundhi, ekkadiki pampamu.</span>
+    <span><a href="/ai-tools/">All AI tools</a> · <a href="/resources/">Free resources</a> · <a href="https://www.instagram.com/augyanix/" rel="noopener">@augyanix</a></span>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>
