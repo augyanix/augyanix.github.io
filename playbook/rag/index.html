@@ -114,15 +114,17 @@ footer { margin-top:36px; padding-top:16px; border-top:1px solid var(--line); co
 <p class="sub">Nee PDF nundi AI correct answer ela isthundhi? Step by step, simple ga. AI with Augyanix · Day 16.</p>
 <p class="checked">✅ Top sources nundi checked: 24 Nov 2026 (list chivarlo)</p>
 
-<p>Hey! "RAG" ani comment chesinanduku thanks 🙌 Reel lo five steps lo short brief chusam. Ikkada full picture undhi: prathi step lo em jaruguthundhi, ekkada break avthundhi, nuvvu ee roju ela vaadochu.</p>
+<p>Hey! Day 16 reel nundi vachinanduku thanks 🙌 Reel lo five steps lo short brief chusam. Ikkada adhe order lo full picture undhi: same five steps, aa twist, aa fix. Tharvatha deep dive: endhuku, ekkada break avthundhi, nuvvu ee roju ela vaadochu.</p>
 
 <ul class="toc" aria-label="Contents">
 <li><a href="#full-form">Full form</a></li>
+<li><a href="#pipeline">Five steps</a></li>
+<li><a href="#twist">Twist</a></li>
+<li><a href="#fix">Fix: page number</a></li>
 <li><a href="#why">Endhuku kaavaali</a></li>
-<li><a href="#pipeline">Pipeline</a></li>
 <li><a href="#embedding">Embedding</a></li>
 <li><a href="#prompt">Model ki em velthundhi</a></li>
-<li><a href="#breaks">Ekkada break avthundhi</a></li>
+<li><a href="#breaks">Inka ekkada break</a></li>
 <li><a href="#pro">Pro upgrades</a></li>
 <li><a href="#vs">RAG vs fine-tuning</a></li>
 <li><a href="#today">Ee roju try chey</a></li>
@@ -131,29 +133,21 @@ footer { margin-top:36px; padding-top:16px; border-top:1px solid var(--line); co
 
 <h2 id="full-form"><span class="n">1</span>RAG full form</h2>
 <div class="rag3">
-<div><span class="L">R</span><b>Retrieval</b><span class="t">Vethakadam. Nee files lo question ki match ayye pieces ni thechhukovadam.</span></div>
-<div><span class="L">A</span><b>Augmented</b><span class="t">Add cheyyadam. Aa pieces ni nee question tho kalipi prompt ni penchadam.</span></div>
-<div><span class="L">G</span><b>Generation</b><span class="t">Answer raayadam. Model aa pieces chusi answer raasthundhi.</span></div>
+<div><span class="L">R</span><b>Retrieval</b><span class="t">Vethakadam. Nee PDF lo question ki match ayye chunks ni vethakadam.</span></div>
+<div><span class="L">A</span><b>Augmented</b><span class="t">Question ki extra info add cheyyadam. Vethikina chunks ni nee question tho kalipi model ki ivvadam.</span></div>
+<div><span class="L">G</span><b>Generation</b><span class="t">Answer raayadam. Model aa chunks chusi answer raasthundhi.</span></div>
 </div>
 <p>Ee peru 2020 lo Patrick Lewis team (Facebook AI Research, ippudu Meta; UCL; NYU) raasina paper nundi vachindhi.</p>
 
-<h2 id="why"><span class="n">2</span>RAG endhuku kaavaali?</h2>
-<div class="vs">
-<div><b>❌ RAG lekunda</b>Model ki thelisindhi training data maathrame. Nee PDF, nee company files, ee week notification: avi model ki theliyavu. Andhuke general answer, leda paatha info, leda guess (hallucination).</div>
-<div class="ag"><b>✅ RAG tho</b>Answer raasey mundhu nee files lo correct pieces vethiki model ki isthundhi. Answer nee data nundi vasthundhi, source / page number kuda chupinchochu. Model ni malli train cheyyakkarledhu.</div>
-</div>
-<div class="callout"><span class="e" aria-hidden="true">📌</span><p><b>Open book exam laaga.</b>Model gurthu nundi raayadhu. Book (nee files) lo correct page open chesi, chusi raasthundhi.</p></div>
-
-<h2 id="pipeline"><span class="n">3</span>Pipeline: rendu phases, five steps</h2>
-<p>RAG lo pani rendu sarlu jaruguthundhi: oka saari file ni ready chesthundhi (indexing), prathi question ki malli vethukuthundhi (query).</p>
+<h2 id="pipeline"><span class="n">2</span>Five steps: reel lo chusinadhe</h2>
+<p>Reel lo chusina five steps, same peru, same order. Steps 1-2 file upload chesinappudu okkasaari jaruguthayi (developers deenni <b>indexing</b> antaru); steps 3-5 prathi question ki malli jaruguthayi (<b>query</b>).</p>
 
 <div class="phase">
 <p class="ph"><span class="pill">Phase 1</span><b>Indexing</b><span class="lbl">file upload chesinappudu, okkasaari</span></p>
 <div class="flow">
 <div class="s"><span class="k">Input</span><b>Nee PDF</b><small>notification, policy, notes, offer letter</small></div><span class="a" aria-hidden="true"></span>
 <div class="s"><span class="k">Step 1</span><b>Chunks</b><small>chinna pieces ga cut; prathi chunk tho page number</small></div><span class="a" aria-hidden="true"></span>
-<div class="s"><span class="k">Step 2</span><b>Embeddings</b><small>prathi chunk meaning → numbers list</small></div><span class="a" aria-hidden="true"></span>
-<div class="s y"><span class="k">Store</span><b>Vector database</b><small>chunks + numbers + page numbers</small></div>
+<div class="s y"><span class="k">Step 2</span><b>Embedding + vector database</b><small>prathi chunk meaning → numbers list; vector database lo save (chunk + numbers + page number)</small></div>
 </div>
 </div>
 
@@ -161,21 +155,41 @@ footer { margin-top:36px; padding-top:16px; border-top:1px solid var(--line); co
 <p class="ph"><span class="pill q">Phase 2</span><b>Query</b><span class="lbl">prathi question ki</span></p>
 <div class="flow">
 <div class="s"><span class="k">Input</span><b>Nee question</b><small>"Group 2 age limit enti?"</small></div><span class="a" aria-hidden="true"></span>
-<div class="s"><span class="k">Step 3</span><b>Retrieval</b><small>question ki kuda embedding; meaning lo dhaggara unna top chunks</small></div><span class="a" aria-hidden="true"></span>
-<div class="s"><span class="k">Step 4</span><b>Augment</b><small>top chunks + question = kotha prompt</small></div><span class="a" aria-hidden="true"></span>
-<div class="s y"><span class="k">Step 5</span><b>Generation</b><small>model aa chunks chusi answer + source</small></div>
+<div class="s"><span class="k">Step 3</span><b>Retrieval: top chunks</b><small>nee question ki kuda embedding; meaning lo dhaggara unna top chunks vethukuthundhi</small></div><span class="a" aria-hidden="true"></span>
+<div class="s"><span class="k">Step 4</span><b>Augment</b><small>aa chunks ni question tho kalipi model ki isthundhi</small></div><span class="a" aria-hidden="true"></span>
+<div class="s y"><span class="k">Step 5</span><b>Generation</b><small>model aa chunks chusi answer raasthundhi</small></div>
 </div>
 </div>
 
 <ol class="steps">
-<li><b>Chunking: file ni pieces ga cut cheyyadam</b><span class="io">In: full PDF text → Out: chinna chunks (oka paragraph, oka section, leda konni vandala tokens). Prathi chunk tho metadata: file peru, page number.</span></li>
-<li><b>Embedding: meaning ni numbers ga maarchadam</b><span class="io">In: oka chunk → Out: oka vector (vandala leda velala numbers list). Same meaning unna text ki numbers dhaggara dhaggara ga untayi. Avi vector database lo save avthayi.</span></li>
-<li><b>Retrieval: dhaggara chunks vethakadam</b><span class="io">In: nee question → Out: meaning lo dhaggara unna top chunks (top-k, usually konni maathrame). Idhi similarity search.</span></li>
-<li><b>Augmentation: prompt lo kalapadam</b><span class="io">In: top chunks + question → Out: oka peddha prompt ("ee context nundi maathrame answer cheppu…").</span></li>
+<li><b>Chunks: PDF ni pieces ga cut cheyyadam</b><span class="io">In: full PDF text → Out: chinna chunks (oka paragraph, oka section, leda konni vandala tokens). Prathi chunk tho metadata: file peru, page number.</span></li>
+<li><b>Embedding + vector database: meaning ni numbers ga maarchi save cheyyadam</b><span class="io">In: oka chunk → Out: oka vector (vandala leda velala numbers list). Same meaning unna text ki numbers dhaggara dhaggara ga untayi. Avi vector database lo save avthayi.</span></li>
+<li><b>Retrieval: top chunks vethakadam</b><span class="io">In: nee question → Out: meaning lo dhaggara unna top chunks (top-k, usually konni maathrame). Idhi similarity search.</span></li>
+<li><b>Augment: question tho kalipi model ki ivvadam</b><span class="io">In: top chunks + question → Out: oka peddha prompt ("ee context nundi maathrame answer cheppu…").</span></li>
 <li><b>Generation: answer raayadam</b><span class="io">In: aa prompt → Out: answer, chunk lo unna page number / source tho.</span></li>
 </ol>
 
-<h2 id="embedding"><span class="n">4</span>Embedding ante, kanipinchela</h2>
+<h2 id="twist"><span class="n">3</span>Twist: model ki kanipinchedhi top chunks maathrame</h2>
+<p>Model nee motham PDF chadhavadhu. Step 3 lo vachina top chunks maathrame chusthundhi. Correct chunk top lo lekapothe, model ki adhi kanipinchadhu.</p>
+<div class="card"><h3>Example: rendu posts, okate PDF</h3><p>Nuvvu nee post (Post A) rule adigaavu. Kaani vere post (Post B) age limit chunk top lo vachindhi. Model aa Post B rule ni nee rule ga confident ga cheppesthundhi. Answer chudataaniki correct laage untundhi, kaani thappu rule.</p></div>
+<div class="warn"><span class="e" aria-hidden="true">⚠️</span><p><b>Confident ga cheppindhi ante correct ani kaadhu.</b> Model thappu chunk ni kuda same confidence tho raasthundhi.</p></div>
+
+<h2 id="fix"><span class="n">4</span>Mari ela pattukovaali? "Page number tho cheppu"</h2>
+<ol class="steps">
+<li><b>Question chivarlo add chey</b><span class="io">"… page number tho cheppu."</span></li>
+<li><b>Aa page open chey</b><span class="io">AI cheppina page number ki PDF lo velli aa line chadhuvu.</span></li>
+<li><b>Match ayyindha chudu</b><span class="io">Line answer tho match aithe, AI correct page nundi answer ichindhi. Match kaakapothe, thappu chunk vachindhi: question lo nee post peru clear ga cheppi malli adugu.</span></li>
+</ol>
+<div class="callout"><span class="e" aria-hidden="true">📌</span><p><b>Hook lo rendu websites, rendu dates?</b>Websites ni nammakunda, official notification PDF upload chesi "last date enti? page number tho cheppu" ani adugu. Aa page open chesi nuvve chudu.</p></div>
+
+<h2 id="why"><span class="n">5</span>RAG endhuku kaavaali?</h2>
+<div class="vs">
+<div><b>❌ RAG lekunda</b>Model ki thelisindhi training data maathrame. Nee PDF, nee company files, ee week notification: avi model ki theliyavu. Andhuke general answer, leda paatha info, leda guess (hallucination).</div>
+<div class="ag"><b>✅ RAG tho</b>Answer raasey mundhu nee files lo correct pieces vethiki model ki isthundhi. Answer nee data nundi vasthundhi, source / page number kuda chupinchochu. Model ni malli train cheyyakkarledhu.</div>
+</div>
+<div class="callout"><span class="e" aria-hidden="true">📌</span><p><b>Open book exam laaga.</b>Model gurthu nundi raayadhu. Book (nee files) lo correct page open chesi, chusi raasthundhi.</p></div>
+
+<h2 id="embedding"><span class="n">6</span>Embedding ante, kanipinchela</h2>
 <p>PDF ni chunks ga cut chesaaka ila untundhi <span class="lbl">example</span></p>
 <div class="doc" aria-label="Example PDF split into chunks">
 <div><span class="pg">PAGE 2</span>Posts list, vacancies</div>
@@ -192,7 +206,7 @@ footer { margin-top:36px; padding-top:16px; border-top:1px solid var(--line); co
 </div>
 <p>Score ekkuva = meaning dhaggara. Words same kaakapoyina parledhu: "age ki eligible" ani adigina, "age limit" chunk dhaggara ga vasthundhi. Idhe keyword search kanna embedding search plus point. <span class="lbl">scores example</span></p>
 
-<h2 id="prompt"><span class="n">5</span>Model ki asalu em velthundhi?</h2>
+<h2 id="prompt"><span class="n">7</span>Model ki asalu em velthundhi?</h2>
 <p>Model nee motham PDF chudadhu. Step 4 tharvatha, model ki ilaanti prompt velthundhi <span class="lbl">simplified</span></p>
 <pre><span class="c"># instructions</span>
 Ee context nundi maathrame answer cheppu.
@@ -206,16 +220,15 @@ Context lo lekapothe "PDF lo ledhu" ani cheppu. Page number ivvu.
 <span class="g">Naa age ki eligible aa?</span></pre>
 <div class="warn"><span class="e" aria-hidden="true">⚠️</span><p><b>Endhuku motham PDF pampadhu?</b> Peddha files model context window lo pattavu, pattina cost, time ekkuva. Chinna files ki konni apps motham file ne pamputhayi; peddha files, chaala files ki RAG vaaduthayi.</p></div>
 
-<h2 id="breaks"><span class="n">6</span>RAG ekkada break avthundhi (andaru miss ayye part)</h2>
-<p>AWS GenAI team experience: RAG baaga pani cheyyakapothe, chaala saarlu thappu <b>retrieval</b> dhe, model dhi kaadhu.</p>
-<div class="card"><h3>1. Thappu chunk vasthundhi</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Vere post age limit chunk top lo vasthe, model adhe nee rule ga confident ga cheppesthundhi.</p></div><div class="row"><span class="tag fix">Fix</span><p>"Page number tho cheppu" ani adugu, aa page open chesi chudu. Question lo post peru clear ga cheppu.</p></div></div>
-<div class="card"><h3>2. Answer rendu chunks lo split ayyindhi</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Rule oka page lo, exception inkoka page lo. Okate chunk vasthe, sagam answer.</p></div><div class="row"><span class="tag fix">Fix</span><p>"Exceptions, conditions kuda vethuku" ani adugu. Developers: chunk size, overlap tune cheyyaali.</p></div></div>
-<div class="card"><h3>3. Scanned PDF (photo laaga)</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Text layer lekapothe chunks lo emi undadhu, leda OCR thappulu.</p></div><div class="row"><span class="tag fix">Fix</span><p>PDF lo text select avthundho chudu. Lekapothe text PDF dhorukuthundho official site lo chudu.</p></div></div>
-<div class="card"><h3>4. Tables, codes, exact numbers</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Embedding meaning chusthundhi; "Code 07" lanti exact words miss avvochu. Tables cut ayithe columns kalasipothayi.</p></div><div class="row"><span class="tag fix">Fix</span><p>Exact word question lo pettu. Developers: hybrid search (keyword + vector).</p></div></div>
-<div class="card"><h3>5. Paatha file</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Corrigendum / revised notification vachindhi, nuvvu paatha PDF upload chesav.</p></div><div class="row"><span class="tag fix">Fix</span><p>Latest file upload chey. Developers: file maarithe re-index.</p></div></div>
+<h2 id="breaks"><span class="n">8</span>Inka ekkada break avthundhi (andaru miss ayye part)</h2>
+<p>AWS GenAI team experience: RAG baaga pani cheyyakapothe, chaala saarlu thappu <b>retrieval</b> dhe, model dhi kaadhu. Twist lo chusina thappu chunk kaakunda, inka ee naalugu:</p>
+<div class="card"><h3>1. Answer rendu chunks lo split ayyindhi</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Rule oka page lo, exception inkoka page lo. Okate chunk vasthe, sagam answer.</p></div><div class="row"><span class="tag fix">Fix</span><p>"Exceptions, conditions kuda vethuku" ani adugu. Developers: chunk size, overlap tune cheyyaali.</p></div></div>
+<div class="card"><h3>2. Scanned PDF (photo laaga)</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Text layer lekapothe chunks lo emi undadhu, leda OCR thappulu.</p></div><div class="row"><span class="tag fix">Fix</span><p>PDF lo text select avthundho chudu. Lekapothe text PDF dhorukuthundho official site lo chudu.</p></div></div>
+<div class="card"><h3>3. Tables, codes, exact numbers</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Embedding meaning chusthundhi; "Code 07" lanti exact words miss avvochu. Tables cut ayithe columns kalasipothayi.</p></div><div class="row"><span class="tag fix">Fix</span><p>Exact word question lo pettu. Developers: hybrid search (keyword + vector).</p></div></div>
+<div class="card"><h3>4. Paatha file</h3><div class="row"><span class="tag">Em jaruguthundhi</span><p>Corrigendum / revised notification vachindhi, nuvvu paatha PDF upload chesav.</p></div><div class="row"><span class="tag fix">Fix</span><p>Latest file upload chey. Developers: file maarithe re-index.</p></div></div>
 <div class="callout"><span class="e" aria-hidden="true">🚨</span><p><b>RAG hallucination ni thagginchuthundhi, zero cheyyadhu.</b>Money, exam, job, health vishayaalu: final ga page nuvve chadhuvu.</p></div>
 
-<h2 id="pro"><span class="n">7</span>Pro upgrades (developers kosam)</h2>
+<h2 id="pro"><span class="n">9</span>Pro upgrades (developers kosam)</h2>
 <div class="tw"><table>
 <thead><tr><th>Technique</th><th>Em chesthundhi</th><th>Endhuku</th></tr></thead>
 <tbody>
@@ -227,7 +240,7 @@ Context lo lekapothe "PDF lo ledhu" ani cheppu. Page number ivvu.
 </tbody></table></div>
 <p>Build cheyyaalante popular tools: LangChain, LlamaIndex (open source frameworks); cloud lo Amazon Bedrock Knowledge Bases, Google Vertex AI Search, Azure AI Search.</p>
 
-<h2 id="vs"><span class="n">8</span>RAG vs fine-tuning vs long context</h2>
+<h2 id="vs"><span class="n">10</span>RAG vs fine-tuning vs long context</h2>
 <div class="tw"><table>
 <thead><tr><th></th><th>RAG</th><th>Fine-tuning</th><th>Long context (motham file paste)</th></tr></thead>
 <tbody>
@@ -238,7 +251,7 @@ Context lo lekapothe "PDF lo ledhu" ani cheppu. Page number ivvu.
 <tr><td><b>Cost</b></td><td>Thakkuva</td><td>Ekkuva</td><td>File peddhadhi ayithe ekkuva</td></tr>
 </tbody></table></div>
 
-<h2 id="today"><span class="n">9</span>Ee roju try chey</h2>
+<h2 id="today"><span class="n">11</span>Ee roju try chey</h2>
 <p>File upload unna ye AI app lo ayina (ChatGPT, Claude, Gemini, NotebookLM, Copilot…) ee prompts paste chey:</p>
 <pre><span class="y">1. Strict answer</span>
 Ee PDF nundi maathrame answer cheppu. PDF lo lekapothe "PDF lo ledhu" ani cheppu. Page number tho cheppu.
@@ -257,7 +270,7 @@ Ee PDF lo okadaanikokati vere ga unna dates / numbers unnaya? Page numbers tho c
 <li>Aadhaar, PAN, bank details unna files upload chese mundhu app privacy settings chudu.</li>
 </ul>
 
-<h2 id="refs"><span class="n">10</span>References</h2>
+<h2 id="refs"><span class="n">12</span>References</h2>
 <p>Ee page lo prathi technical point ee sources nundi (24 Nov 2026 na chusam):</p>
 <ol class="refs">
 <li><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener noreferrer">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> <span class="who">· Lewis et al., NeurIPS 2020 (original paper)</span></li>

@@ -183,7 +183,7 @@ print(len(lines), &quot;lines in,&quot;, len(keep), &quot;lines kept&quot;)</pre
 </ul>
 <h3>Step 3 · Tokenization</h3>
 <ul class="todo">
-<li><label><input type="checkbox" data-k="89"><span><code>python data/shakespeare_char/prepare.py</code><br><small>It cuts the text into tokens (here, one token = one character), splits it 90 % training / 10 % validation, and writes <code>train.bin</code>, <code>val.bin</code>, <code>meta.pkl</code>. If <code>input.txt</code> is missing, it downloads tiny Shakespeare.</small></span></label></li>
+<li><label><input type="checkbox" data-k="89"><span><code>python data/shakespeare_char/prepare.py</code><br><small>It cuts the text into tokens (here, one token = one character), splits it 90 % training / 10 % validation (the reel calls this held-back part <b>test data</b>: text the model never trains on), and writes <code>train.bin</code>, <code>val.bin</code>, <code>meta.pkl</code>. If <code>input.txt</code> is missing, it downloads tiny Shakespeare.</small></span></label></li>
 <li><label><input type="checkbox" data-k="90"><span>Bonus: see how ChatGPT-style models cut text (word pieces, not characters):</span></label></li>
 </ul>
 <div class="code"><span class="lang">python</span><button onclick="cp(this)">Copy</button><pre>import tiktoken
@@ -284,7 +284,7 @@ for name in [&quot;HuggingFaceTB/SmolLM2-135M-Instruct&quot;, &quot;my-model&quo
 <li><label><input type="checkbox" data-k="166"><span>Write 20 Q&amp;A pairs in a notebook before you open the laptop.</span></label></li>
 <li><label><input type="checkbox" data-k="167"><span>Read <code>clean.py</code> line by line and explain each line in Telugu to a friend.</span></label></li>
 </ul>
-<div class="callout"><span class="e">🚀</span><div><b>Next:</b> Day 6, "Which model for which job?": ChatGPT, Claude, Gemini, ye doubt ki edi vaadali. Follow Augyanix, miss avvaku! Full roadmap: "Complete AI Roadmap" (link in bio).</div></div>
+<div class="callout"><span class="e">🚀</span><div><b>Next:</b> Day 6, "Which model for which job?": ChatGPT, Claude, Gemini, ye doubt ki edi vaadali. Follow Augyanix, miss avvaku! Full roadmap: <a href="/resources/ai-roadmap/">Complete AI Roadmap</a>.</div></div>
 <footer>© Augyanix · AI with Augyanix (Instagram &amp; YouTube). Mana AI Rachabanda… Augyanix tho!</footer>
 </div>
 <script>
